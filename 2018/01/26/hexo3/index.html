@@ -6,14 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | yuko&#39;s blog</title>
+  <title>gitment评论功能的实现 | yuko&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="yuko&#39;s blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="目前，gitment已经集成到此项目里，过程中碰到了很多问题，并且网上关于gitment的介绍并不多，写一篇总结，希望可以帮到大家。   ps：这首《尼伯龙根之歌》翻了好久才找到，外链的只有这个版本，还是很不错的，可以关注我的网易云主页,么么哒">
+<meta name="keywords" content="gitment">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitment评论功能的实现">
+<meta property="og:url" content="http://yoursite.com/2018/01/26/hexo3/index.html">
 <meta property="og:site_name" content="yuko&#39;s blog">
+<meta property="og:description" content="目前，gitment已经集成到此项目里，过程中碰到了很多问题，并且网上关于gitment的介绍并不多，写一篇总结，希望可以帮到大家。   ps：这首《尼伯龙根之歌》翻了好久才找到，外链的只有这个版本，还是很不错的，可以关注我的网易云主页,么么哒">
+<meta property="og:image" content="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/sH6M343BPRgfn4jwdSCtKF5JRDF39JlF2uCLF5ie7dM!/b/dFUBAAAAAAAA&bo=1wWAAgAAAAADF2I!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/xved3ZzNU79MghrPoRXFkP7K0..8GEdYZ667v9wZzSk!/b/dJUAAAAAAAAA&bo=.AOAAgAAAAADF0s!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/qOgudoZWl6WM2mEpbh8A91c.hj1tq1opmCU5BsEYEQg!/b/dGoBAAAAAAAA&bo=vAWAAgAAAAADBxk!&rf=viewer_4">
+<meta property="og:updated_time" content="2018-01-26T08:03:07.009Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="yuko&#39;s blog">
+<meta name="twitter:title" content="gitment评论功能的实现">
+<meta name="twitter:description" content="目前，gitment已经集成到此项目里，过程中碰到了很多问题，并且网上关于gitment的介绍并不多，写一篇总结，希望可以帮到大家。   ps：这首《尼伯龙根之歌》翻了好久才找到，外链的只有这个版本，还是很不错的，可以关注我的网易云主页,么么哒">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/sH6M343BPRgfn4jwdSCtKF5JRDF39JlF2uCLF5ie7dM!/b/dFUBAAAAAAAA&bo=1wWAAgAAAAADF2I!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="yuko&#39;s blog" type="application/atom+xml">
   
@@ -159,36 +168,78 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hexo3/" class="archive-article-date">
-  	<time datetime="2018-01-26T07:06:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hexo3/">gitment评论功能的实现</a>
+    <h1 class="article-title" itemprop="name">
+      gitment评论功能的实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/26/hexo3/" class="archive-article-date">
+  	<time datetime="2018-01-26T07:06:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>目前，gitment已经集成到此项目里，过程中碰到了很多问题，并且网上关于<a href="https://github.com/imsun/gitment" target="_blank" rel="noopener">gitment</a>的介绍并不多，写一篇总结，希望可以帮到大家。</p>
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="70%" height="86" src="//music.163.com/outchain/player?type=2&id=444267628&auto=0&height=66"></iframe></p>
+<ul>
+<li>ps：这首《尼伯龙根之歌》翻了好久才找到，外链的只有这个版本，还是很不错的，可以关注我的<a href="http://music.163.com/#/user/follows?id=254544983" target="_blank" rel="noopener">网易云主页</a>,么么哒<a id="more"></a>
+</li>
+</ul>
+<h2 id="一、创建OAuth-Apps"><a href="#一、创建OAuth-Apps" class="headerlink" title="一、创建OAuth Apps"></a>一、创建OAuth Apps</h2><p>打开GitHub的setting界面，在右侧导航栏找到Developer settings打开<br><img width="50%" src="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/sH6M343BPRgfn4jwdSCtKF5JRDF39JlF2uCLF5ie7dM!/b/dFUBAAAAAAAA&bo=1wWAAgAAAAADF2I!&rf=viewer_4"><br>创建后，获取Client ID和Client Secret<br><img width="50%" src="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/xved3ZzNU79MghrPoRXFkP7K0..8GEdYZ667v9wZzSk!/b/dJUAAAAAAAAA&bo=.AOAAgAAAAADF0s!&rf=viewer_4"></p>
+<h2 id="二、修改themes-yilia-config-yml文件"><a href="#二、修改themes-yilia-config-yml文件" class="headerlink" title="二、修改themes/yilia/_config.yml文件"></a>二、修改themes/yilia/_config.yml文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#5、Gitment</span></span><br><span class="line">gitment_owner: snakesen      <span class="comment">#你的 GitHub ID</span></span><br><span class="line">gitment_repo: <span class="string">'snakesen.github.io'</span>         <span class="comment">#存储评论的 repo</span></span><br><span class="line">gitment_oauth:</span><br><span class="line">  client_id: <span class="string">''</span>           <span class="comment">#client ID</span></span><br><span class="line">  client_secret: <span class="string">''</span>       <span class="comment">#client secret</span></span><br></pre></td></tr></table></figure>
+<p>这样在博客下面就已经出现评论界面了</p>
+<h2 id="三、初始化gitment"><a href="#三、初始化gitment" class="headerlink" title="三、初始化gitment"></a>三、初始化gitment</h2><p>打开需要的开放评论的博客界面<br><img width="50%" src="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/qOgudoZWl6WM2mEpbh8A91c.hj1tq1opmCU5BsEYEQg!/b/dGoBAAAAAAAA&bo=vAWAAgAAAAADBxk!&rf=viewer_4"><br>只需要Login in你的GitHub，点击commit  initialize，就完成初始化了</p>
+<ul>
+<li>必须得发布上去才能login in，本地不能初始化</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/alipay.JPG">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/images/wechat.JPG">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,143 +251,163 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/26/hexo3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hexo2/" class="archive-article-date">
-  	<time datetime="2018-01-26T06:54:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/26/hexo2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">yilia主题的配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hexo2/">yilia主题的配置</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、创建OAuth-Apps"><span class="toc-number">1.</span> <span class="toc-text">一、创建OAuth Apps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、修改themes-yilia-config-yml文件"><span class="toc-number">2.</span> <span class="toc-text">二、修改themes/yilia/_config.yml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、初始化gitment"><span class="toc-number">3.</span> <span class="toc-text">三、初始化gitment</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hexo1/" class="archive-article-date">
-  	<time datetime="2018-01-26T02:33:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hexo1/">github+hexo(yilia主题)搭建自己的博客网站</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/26/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-26T00:45:17.029Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/26/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
+        
+    </div>
+</aside>
 
 
+
+  
+  
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2018/01/26/hexo3/",
+  owner: 'snakesen',
+  repo: 'snakesen.github.io',
+  oauth: {
+    client_id: 'e9f559bb935e75a9d636',
+    client_secret: 'cea3376a07d1341258c032da04a4b74db0a81d98',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+  
+
+ <!-- 目录内容 -->
+        
+            <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+            <span class="btn-bg"></span>
+            <span class="btn-text">文章导航</span>
+            </p>
+            <div id="toc-article" class="toc-article">
+                <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+                <strong class="toc-title">文章目录</strong>
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、创建OAuth-Apps"><span class="toc-number">1.</span> <span class="toc-text">一、创建OAuth Apps</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、修改themes-yilia-config-yml文件"><span class="toc-number">2.</span> <span class="toc-text">二、修改themes/yilia/_config.yml文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、初始化gitment"><span class="toc-number">3.</span> <span class="toc-text">三、初始化gitment</span></a></li></ol>
+           </div>
+           <script type="text/javascript">
+            function showToc(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:block");
+                show_toc_btn.setAttribute("style","display:none");
+                };
+            function showBtn(){
+                var toc_article = document.getElementById("toc-article");
+                var show_toc_btn = document.getElementById("show-toc-btn");
+                toc_article.setAttribute("style","display:none");
+                show_toc_btn.setAttribute("style","display:block");
+                };
+           </script>
+             
+        <!-- 目录内容结束 -->
           </div>
         </div>
       </div>
@@ -363,8 +434,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
