@@ -16,8 +16,8 @@
 <meta property="og:site_name" content="yuko&#39;s blog">
 <meta property="og:description" content="github提供的page，hexo提供的静态博客文档，这样可以搭建一个自己的一个博客网站。   使用github pages服务搭建博客的好处有： 1.全是静态文件，访问速度快；2.免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；3.可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；4.数据绝对安全，基于github的版本管理，想恢复到哪个">
 <meta property="og:image" content="https://images2017.cnblogs.com/blog/900740/201708/900740-20170820231240521-343494955.png">
-<meta property="og:image" content="https://images2017.cnblogs.com/blog/900740/201708/900740-20170820235347850-1973597843.png">
-<meta property="og:updated_time" content="2018-01-26T06:53:30.176Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/Grey5xhbd3mp4ChdU9S7uIh.*Ar2yjx7ERnOvabuhGc!/b/dAgBAAAAAAAA&bo=wwSAAgAAAAADB2c!&rf=viewer_4">
+<meta property="og:updated_time" content="2018-01-26T08:17:14.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo(yilia主题)搭建自己的博客网站">
 <meta name="twitter:description" content="github提供的page，hexo提供的静态博客文档，这样可以搭建一个自己的一个博客网站。   使用github pages服务搭建博客的好处有： 1.全是静态文件，访问速度快；2.免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；3.可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；4.数据绝对安全，基于github的版本管理，想恢复到哪个">
@@ -198,7 +198,7 @@
 <p>hexo s是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 即可看到内容，很多人会碰到浏览器一直在转圈但是就是加载不出来的问题，一般情况下是因为端口占用的缘故，因为4000这个端口太常见了，windows下cmd netstat -a查询端口占用<br><img width="50%" src="https://images2017.cnblogs.com/blog/900740/201708/900740-20170820231240521-343494955.png"></p>
 <h2 id="二、将本地hexo与github联系"><a href="#二、将本地hexo与github联系" class="headerlink" title="二、将本地hexo与github联系"></a>二、将本地hexo与github联系</h2><h3 id="1、配置SSH-key"><a href="#1、配置SSH-key" class="headerlink" title="1、配置SSH key"></a>1、配置SSH key</h3><p>首先，检查本机存在的ssh密匙<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/. ssh  <span class="comment">#检查本机已存在的ssh密钥</span></span><br></pre></td></tr></table></figure></p>
 <p>如果提示：No such file or directory 说明你是第一次使用git。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"邮箱"</span></span><br></pre></td></tr></table></figure></p>
-<p>连续3次回车，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key<br><img src="https://images2017.cnblogs.com/blog/900740/201708/900740-20170820235347850-1973597843.png"><br>将sshkey 复制到key那里，保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com <span class="comment"># 测试下是否成功</span></span><br></pre></td></tr></table></figure></p>
+<p>连续3次回车，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key<br><img width="50%" src="http://m.qpic.cn/psb?/6c6215bf-92f5-4c97-935d-fa603c1cfa08/Grey5xhbd3mp4ChdU9S7uIh.*Ar2yjx7ERnOvabuhGc!/b/dAgBAAAAAAAA&bo=wwSAAgAAAAADB2c!&rf=viewer_4"><br>将sshkey 复制到key那里，保存<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com <span class="comment"># 测试下是否成功</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="2、设置Git的user-name和email"><a href="#2、设置Git的user-name和email" class="headerlink" title="2、设置Git的user name和email"></a>2、设置Git的user name和email</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"snakesen"</span>// <span class="comment">#你的github用户名，非昵称</span></span><br><span class="line">$ git config --global user.email  <span class="string">"xxx@qq.com"</span>// <span class="comment">#填写你的github注册邮箱</span></span><br></pre></td></tr></table></figure>
 <h3 id="3、设置deployment"><a href="#3、设置deployment" class="headerlink" title="3、设置deployment"></a>3、设置deployment</h3><p>配置_config.yml中有关deploy的部分：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: git@github.com:snakesen/snakesen.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
 <p>还需要安装一个插件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
@@ -579,27 +579,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://snakesen.github.io" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>个人博客</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://music.163.com/#/user/follows?id=254544983" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>网易云主页</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://shop142633429.taobao.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>淘宝主页</a>
             </li>
           
         </ul>
@@ -610,7 +598,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;一名刚刚出生海南岛的岛民&lt;br&gt;谢谢大家支持，么么哒</div>
   	  	
     	</section>
     
